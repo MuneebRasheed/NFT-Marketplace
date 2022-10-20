@@ -7,6 +7,57 @@
   pointer-events: none;
 }
 
+
+
+
+/* .slick-slide.slick-active.slick-cloned {
+  width: 280px !important;
+} */
+.slidesection {
+  background-color:
+    #098A45;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+
+.home-slide .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+
+  color: white;
+  size: 10px;
+}
+
+
+.home-slide .swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+  color: white;
+}
+
+.swiper-slide {
+  padding-left: 85px;
+}
+
+.custom .swiper-slide {
+  padding-right: 45px !important;
+  padding-left: 45px !important;
+}
+
+
+.purchaseList {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 300px;
+  flex-wrap: wrap;
+}
+
+.setioncolor {
+  background-color: red;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,6 +83,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

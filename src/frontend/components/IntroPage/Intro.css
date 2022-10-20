@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.introImg {
+    width: 1493px;
+    height: 639px;
+    position: relative;
+    margin-left: -144px;
+
+    background-size: cover;
+
+    background-image: url(../../images/_Image_.png);
+
+}
+
+.Introbtn {
+    background-color: red;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 130px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.introText {
+    display: flex;
+    width: 500px;
+    height: 289px;
+    flex-direction: column;
+    padding-left: 60px;
+    padding-right: 60px;
+    position: absolute;
+    top: 40%;
+    left: 6%;
+
+}
+
+.introText h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.introText p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+
+.introContainer {
+    display: flex;
+
+}

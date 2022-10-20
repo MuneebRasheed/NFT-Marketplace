@@ -38,7 +38,7 @@ contract Marketplace is ReentrancyGuard {
         address indexed nft,
         uint tokenId,
         uint price,
-        address indexed seller,
+        address indexed seller ,
         address indexed buyer
     );
 
@@ -80,11 +80,13 @@ contract Marketplace is ReentrancyGuard {
         require(msg.value >= _totalPrice, "not enough ether to cover item price and market fee");
         require(!item.sold, "item already sold");
         // pay seller and feeAccount
+        console.log("mun",item.seller);
         item.seller.transfer(item.price);
         feeAccount.transfer(_totalPrice - item.price);
         // update item to sold
         item.sold = true;
         // transfer nft to buyer
+        
         item.nft.transferFrom(address(this), msg.sender, item.tokenId);
         // emit Bought event
         emit Bought(

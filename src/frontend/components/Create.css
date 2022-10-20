@@ -1,0 +1,32 @@
+.createImage {
+    background-image: url(../images/create.jpg);
+    margin-top: 95px;
+    width: 50%;
+    height: 400px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-color: red; */
+    /* background-position: left; */
+}
+
+.createMain {
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.createForm {
+    margin-left: 70px;
+    margin-right: 20px;
+
+
+}
+
+.createButton {
+    background-color: #098A45;
+    border-radius: 70px;
+}

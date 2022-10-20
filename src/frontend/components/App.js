@@ -15,6 +15,9 @@ import NFTAddress from '../contractsData/NFT-address.json'
 import { useState } from 'react'
 import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
+import Footer from '../components/Footer/Footer.js'
+import IntroPage from '../components/IntroPage/Into'
+import MainTab from "./Tab";
 
 import './App.css';
 
@@ -30,7 +33,8 @@ function App() {
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     // Set signer
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
+    console.log("signer", signer);
 
     window.ethereum.on('chainChanged', (chainId) => {
       window.location.reload();
@@ -40,16 +44,22 @@ function App() {
       setAccount(accounts[0])
       await web3Handler()
     })
+    console.log("Muneeb");
     loadContracts(signer)
   }
   const loadContracts = async (signer) => {
+
     // Get deployed copies of contracts
     const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
     setMarketplace(marketplace)
+
     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
+
     setNFT(nft)
     setLoading(false)
   }
+
+
 
   return (
     <BrowserRouter>
@@ -66,7 +76,9 @@ function App() {
           ) : (
             <Routes>
               <Route path="/" element={
+                // <MainTab />
                 <Home marketplace={marketplace} nft={nft} />
+                // <IntroPage />
               } />
               <Route path="/create" element={
                 <Create marketplace={marketplace} nft={nft} />
@@ -80,6 +92,9 @@ function App() {
             </Routes>
           )}
         </div>
+        <>
+          <Footer />
+        </>
       </div>
     </BrowserRouter>
 
